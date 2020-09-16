@@ -16,8 +16,8 @@
   export default {
     name: 'app',
     components: {
-      EmployeeTable,
-	  EmployeeForm,
+		EmployeeTable,
+		EmployeeForm,
     },
 	data(){
 		return{
