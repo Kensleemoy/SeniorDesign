@@ -3,9 +3,7 @@
   <div id="app" class="small-container">
     <h1>Employees</h1>
 
-    <!-- <employee-table />-->
 	<employee-form @add:employee="addEmployee" />
-	<employee-form />
 	<employee-table :employees="employees" />
   </div>
 </template>
@@ -51,6 +49,8 @@
 		const newEmployee = { ...employee, id };
 
 		this.employees = [...this.employees, newEmployee];
+	}
+ }
 }
 </script>
 
