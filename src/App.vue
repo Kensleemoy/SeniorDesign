@@ -4,7 +4,11 @@
     <h1>Employees</h1>
 
 	<employee-form @add:employee="addEmployee" />
-	<employee-table :employees="employees" @delete:employee="deleteEmployee" />
+	<employee-table 
+		:employees="employees" 
+		@delete:employee="deleteEmployee"
+		@edit:employee="editEmployee"
+	/>
   </div>
 </template>
 
@@ -54,6 +58,11 @@
 		this.employees = this.employees.filter(
 			employee => employee.id !== id
 		)
+	},
+	editEmployee(id, updatedEmployee) {
+		this.employees = this.employees.map(employee =>
+			employee.id === id ? updatedEmployee : employee
+		)
 	}
  }
 }
@@ -64,6 +73,13 @@
     background: #009435;
     border: 1px solid #009435;
   }
+
+	button:hover,
+	button:active,
+	button:focus {
+		background: #32a95d;
+		border: 1px solid #32a95d;
+	}
 
   .small-container {
     max-width: 680px;
