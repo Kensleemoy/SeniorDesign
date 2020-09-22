@@ -1,0 +1,1 @@
+Placeholder data we can use to test out our API calls: https://jsonplaceholder.typicode.com/ 
