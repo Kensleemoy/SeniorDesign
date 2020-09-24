@@ -54,7 +54,7 @@ export default {
             this.submitting = true
             this.clearStatus()
 
-            if(this.invalidName || this.invalidEmail){
+            if(this.invalidFirstName  || this.invalidLastName || this.invalidEmail){
                 this.error = true
                 return
             }
@@ -63,7 +63,8 @@ export default {
             this.$refs.first.focus()
 
             this.teammate = {
-                name: '',
+                firstname: '',
+                lastname: '',
                 email: '',
             }
             this.error = false

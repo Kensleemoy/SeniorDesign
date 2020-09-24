@@ -14,6 +14,7 @@
 <script>
   import TeammateTable from '@/components/TeammateTable.vue'
   import TeammateForm from '@/components/TeammateForm.vue'
+  import mockData from '@/components/MOCK_DATA.json'
 
   export default {
     name: 'app',
@@ -23,37 +24,39 @@
     },
     data() {
       return{
-        teammates: [
-          {
-            id:1 ,
-            firstname: 'Aubrey',
-            lastname: 'Spannagel',
-            email: 'aubreybohn@u.boisestate.edu',
-          },
-        ],
+        teammates: mockData,
       }
     },
+
+    mounted(){
+      this.getTeammates()
+    },
+
     methods: {
       addTeammate(teammate) {
-        const lastId =
-          this.teammates.length > 0
-            ? this.teammates[this.teammates.length - 1].id
-            : 0;
-        const id = lastId + 1;
-        const newTeammate = { ...teammate, id };
+        try {
+          const data = mockData
+          this.teammates = [...teammate, data]
 
-        this.teammates = [...this.teammates, newTeammate];
+        } catch (error) {
+          console.error(error)
+        }
       },
+
       deleteTeammate(id){
         this.teammates = this.teammates.filter(
           teammate => teammate.id !== id
         )
       },
+
       editTeammate(id, updatedTeammate){
-        this.teammates = this.teammates.map(teammate =>
-          teammate.id === id ? updatedTeammate : teammate
-        )
-      }
+        try {
+          this.teammates = this.teammates.map(teammate =>
+          (teammate.id === id ? updatedTeammate : teammate))
+        } catch (error) {
+          console.error(error)
+        }
+      },
     },
   }
 </script>
