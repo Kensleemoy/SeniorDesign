@@ -10,7 +10,6 @@
 	</div>
 	<nav>
 		<ul>
-			<li>Go to</li>
 			<li>
 				<a href="about.html">
 					About Us
