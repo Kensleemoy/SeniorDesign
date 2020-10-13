@@ -1,13 +1,16 @@
 <template>
   <div id="app">
-	<h1>Sources</h1>
+    <Header/>
+    <h1>Sources</h1>
   </div>
 </template>
 
 <script>
-
 export default {
-  name: 'Sources'
+  name: 'Sources',
+  components: {
+    Header: () => import('@/components/Header.vue'),
+  },
 }
 </script>
 
@@ -18,6 +21,11 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+/* This makes sure there is not weird padding around header */
+html, body {
+    margin: 0;
+    padding: 0;
 }
 </style>

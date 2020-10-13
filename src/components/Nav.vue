@@ -1,16 +1,16 @@
 <template>
     <div class="nav">
 		<ul>
-			<li>
 				<a href="about.html">
-					About Us
-				</a>
+			<li>
+					ABOUT US
 			</li>
-      <li>
-        <a href="sources.html">
-          Sources
-        </a>
-        </li>
+				</a>
+                <a href="sources.html">
+            <li>
+                SOURCES
+            </li>
+                </a>
 		</ul>
     </div>
 </template>
@@ -24,10 +24,9 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .nav {
-    position: absolute;
-    float: left;
-    width: 20%;
     height: 30%;
+    text-align: left;
+    width: 18%;
 }
 ul {
   list-style-type: none;
@@ -35,21 +34,17 @@ ul {
 }
 li {
   display: block;
-  margin: 0 10px;
-  width: 100%;
-  height: 100%;
+  margin: 0;
+  padding: 2%;
   background-color: #1c4587ff;
   color: #ffffffff;
+  text-align: center;
 }
 a {
     text-decoration: none;
     color: #ffffffff;
     font-weight: bold;
-    font-size: 100%;
-}
-
-li a:hover {
-    color: #1c4587ff;
+    font-size: 25px;
 }
 
 li:hover {

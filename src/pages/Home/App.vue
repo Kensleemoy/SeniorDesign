@@ -5,7 +5,7 @@
     <div style="position: relative">
 		<div class="short-it">
 			<div class="body">
-    <h1>Testing</h1>
+    <h1>Cases In Idaho</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -87,6 +87,12 @@ a {
     height: 40px;
     background-image: linear-gradient(to bottom, transparent, #fff)
   }
+}
+
+/* This makes sure there is not weird padding around header */
+html, body {
+    margin: 0;
+    padding: 0;
 }
 
 </style>

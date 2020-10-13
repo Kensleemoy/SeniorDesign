@@ -1,9 +1,9 @@
 <template>
-    <div class="nav-header">
+        <div>
         <div class="header">
-            <h1><span id="COV-ID">COV-ID</span><span id="aho">aho</span></h1>
+        <a href="index.html"><h1><span id="COV-ID">COV-ID</span><span id="aho">aho</span></h1></a>
         </div>
-        <Nav /> 
+    <Nav /> 
     </div>
 </template>
 
@@ -18,19 +18,17 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.nav-header {
-    position: static;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    background-color: #000000;
-    height: 30%;
-}
+
 .header {
     text-align: center;
     background-color: #1c4587ff;
-    margin: 0;
-    padding: 0;
+    height: 20%;
+    width: 100%;
+    padding-top: 6%;
+    display: inline-block;
+}
+h1 {
+    font-size: 40px;
 }
 #COV-ID {
     color: #ff9900;
@@ -39,5 +37,7 @@ export default {
 #aho {
     color: #ffffff;
 }
-
+a {
+    text-decoration: none;
+}
 </style>
