@@ -5,9 +5,7 @@
 		<div class="short-it">
 			<div class="body">
     <h1>Cases In Idaho</h1>
-    <stateData
-		:state="state" 
-	/>
+    <StateData :state="state" />
   </div>
 		</div>
 		<div />
@@ -16,17 +14,16 @@
 </template>
 
 <script>
-import stateData from '@/components/stateData.vue'
 
 export default {
 	name: 'Home',
 	components: {
 		Header: () => import('@/components/Header.vue'),
-		stateData,
+		StateData: () => import('@/components/stateData.vue'),
 	},
 	data(){
 		return{
-			state: [],
+			state: {},
 	}
 	},
 	mounted() {
@@ -37,11 +34,12 @@ export default {
 			try {
 				const proxyurl = "https://cors-anywhere.herokuapp.com/";
 				const url = "https://api.covidactnow.org/v2/state/ID.json?apiKey=bd6b09ad6c234b8aad900c39489909cf";
-				const response = await fetch (proxyurl + url)
-				const data = await response.json()
-				this.state = data
+				const response = await fetch (proxyurl + url);
+        const data = await response.json();
+        console.log(data);
+        this.state = data;
 			} catch (error) {
-				console.error(error)
+				console.error(error);
 			}
 		},
 	}
@@ -73,13 +71,11 @@ a {
 }
 
 .short-it div {
-  /* position: absolute; */
     bottom: 0;
     z-index: 1;
     display: block;
     width: 100%;
     height: 40px;
-    background-image: linear-gradient(to bottom, transparent, #fff);
 }
 
 /* This makes sure there is not weird padding around header */
