@@ -1,7 +1,8 @@
 <template>
   <div id="app">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
   <Header />
-    <div style="position: relative">
+    <div>
 		<div class="short-it">
 			<div class="body">
     <h1>Cases In Idaho</h1>
@@ -86,10 +87,5 @@ a {
     height: 40px;
 }
 
-/* This makes sure there is not weird padding around header */
-html, body {
-    margin: 0;
-    padding: 0;
-}
 
 </style>
