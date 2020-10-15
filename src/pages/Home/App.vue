@@ -1,12 +1,15 @@
 <template>
   <div id="app">
   <Header />
-    <img alt="Vue logo" src="@/assets/logo.png">
+    <!--<img alt="Vue logo" src="@/assets/logo.png"> -->
     <div style="position: relative">
 		<div class="short-it">
 			<div class="body">
     <h1>Cases In Idaho</h1>
-    <p>
+    <stateData
+		:state="state" 
+	/>
+	<!-- <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
       <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
@@ -31,7 +34,7 @@
       <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+    </ul> -->
   </div>
 		</div>
 		<div />
@@ -40,13 +43,35 @@
 </template>
 
 <script>
+import stateData from '@/components/stateData.vue'
 
 export default {
-  name: 'Home',
-  components: {
-    // HelloWorld: () => import(/* webpackChunkName: 'hello-world' */ '@/components/HelloWorld.vue'),
-    Header: () => import('@/components/Header.vue'),
-  }
+	name: 'Home',
+	components: {
+		Header: () => import('@/components/Header.vue'),
+		stateData,
+	},
+	data(){
+		return{
+			state: [],
+	}
+	},
+	mounted() {
+		this.getStateData()
+	},
+	methods: {
+		async getStateData(){
+			try {
+				const proxyurl = "https://cors-anywhere.herokuapp.com/";
+				const url = "https://api.covidactnow.org/v2/state/ID.json?apiKey=bd6b09ad6c234b8aad900c39489909cf";
+				const response = await fetch (proxyurl + url)
+				const data = await response.json()
+				this.state = Object.keys(data).map((key)=>data[key])
+			} catch (error) {
+				console.error(error)
+			}
+		},
+	}
 }
 </script>
 
