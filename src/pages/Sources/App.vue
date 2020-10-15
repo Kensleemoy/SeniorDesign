@@ -4,13 +4,14 @@
     <Header/>
     <h1>SOURCES</h1>
     <div class="horizontal-container">
-      <hr /> 
-	  <ul>
+    <hr /> 
+	<ul>
 		<li>
 			<a href="https://covidactnow.org/resources#api" target="_blank" rel="noopener">covidactnow.org</a>
-		</li>
+	</li>
 	</ul>
     </div>
+	</div>
 </template>
 
 <script>
