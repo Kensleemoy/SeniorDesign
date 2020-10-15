@@ -1,5 +1,6 @@
 <template>
     <div>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
         <div class="header">
             <a href="index.html"><h1><span id="COV-ID">COV-ID</span><span id="aho">aho</span></h1></a>
         </div>
@@ -24,12 +25,13 @@ export default {
     background-color: #1c4587ff;
     height: 20%;
     width: 100%;
-    padding-top: 6%;
+    padding-top: 1%;
     padding-bottom: 5px;
     position: relative;
+    font-family: 'Oswald', sans-serif;
 }
 h1 {
-    font-size: 40px;
+    font-size: 60px;
 }
 #COV-ID {
     color: #ff9900;
@@ -37,13 +39,13 @@ h1 {
 
 #aho {
     color: #ffffff;
+    font-weight: bold;
 }
 a {
     text-decoration: none;
 }
 
 Nav {
-    /* position: absolute;  */
     float: top;
 }
 </style>

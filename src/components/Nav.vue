@@ -1,17 +1,19 @@
+
 <template>
     <div class="nav">
-		<ul>
-				<a href="about.html">
-			<li>
-					ABOUT US
-			</li>
-				</a>
-                <a href="sources.html">
-            <li id="bottom-nav">
-                SOURCES
-            </li>
-                </a>
-		</ul>
+      <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+      <ul>
+          <a href="sources.html">
+        <li>
+            SOURCES
+        </li>
+          </a>
+                  <a href="about.html">
+              <li id="bottom-nav">
+                  ABOUT US
+              </li>
+                  </a>
+      </ul>
     </div>
 </template>
 
@@ -27,7 +29,9 @@ export default {
     height: 30%;
     text-align: left;
     width: 18%;
-    margin-top: -20px;
+    margin-top: -16px;
+    font-family: 'Oswald', sans-serif;
+    position: absolute;
 }
 ul {
   list-style-type: none;
@@ -44,7 +48,7 @@ li {
 a {
     text-decoration: none;
     color: #ffffffff;
-    font-size: 25px;
+    font-size: 35px;
 }
 
 li:hover {
@@ -53,6 +57,7 @@ li:hover {
 }
 
 #bottom-nav {
-  border-radius: 0px 0px 15px 15px;
+  border-radius: 0px 0px 30px 30px;
+  padding-bottom: 20px;
 }
 </style>
