@@ -1,6 +1,9 @@
 <template>
   <div id="stateData">
-	<div>{{state}}</div>
+	<div> Last updated on {{state.lastUpdatedDate}}</div>
+	<div>Population: {{state.population}}</div>
+	<div>Cases: {{state.actuals.cases}}</div>
+	<div>Deaths: {{state.actuals.deaths}}</div>
   </div>
 </template>
 
