@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-  <Header />
+    <Header />
     <img alt="Vue logo" src="@/assets/logo.png">
-    <div style="position: relative">
+    <div >
 		<div class="short-it">
 			<div class="body">
     <h1>Cases In Idaho</h1>
@@ -73,20 +73,14 @@ a {
   color: #2c3e50;
 }
 
-.short-it {
-  position: relative;
-  overflow-x: hidden;
-  overflow-y: auto;
-  max-height: 500px;
-  + div {
-    position: absolute;
+.short-it div {
+  /* position: absolute; */
     bottom: 0;
     z-index: 1;
     display: block;
     width: 100%;
     height: 40px;
-    background-image: linear-gradient(to bottom, transparent, #fff)
-  }
+    background-image: linear-gradient(to bottom, transparent, #fff);
 }
 
 /* This makes sure there is not weird padding around header */

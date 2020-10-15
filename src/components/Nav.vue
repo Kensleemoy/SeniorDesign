@@ -7,7 +7,7 @@
 			</li>
 				</a>
                 <a href="sources.html">
-            <li>
+            <li id="bottom-nav">
                 SOURCES
             </li>
                 </a>
@@ -27,6 +27,7 @@ export default {
     height: 30%;
     text-align: left;
     width: 18%;
+    margin-top: -20px;
 }
 ul {
   list-style-type: none;
@@ -35,7 +36,7 @@ ul {
 li {
   display: block;
   margin: 0;
-  padding: 2%;
+  padding: 3%;
   background-color: #1c4587ff;
   color: #ffffffff;
   text-align: center;
@@ -43,12 +44,15 @@ li {
 a {
     text-decoration: none;
     color: #ffffffff;
-    font-weight: bold;
     font-size: 25px;
 }
 
 li:hover {
     background-color: #ff9900;
     color: #1c4587ff
+}
+
+#bottom-nav {
+  border-radius: 0px 0px 15px 15px;
 }
 </style>

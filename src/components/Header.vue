@@ -1,9 +1,9 @@
 <template>
-        <div>
+    <div>
         <div class="header">
-        <a href="index.html"><h1><span id="COV-ID">COV-ID</span><span id="aho">aho</span></h1></a>
+            <a href="index.html"><h1><span id="COV-ID">COV-ID</span><span id="aho">aho</span></h1></a>
         </div>
-    <Nav /> 
+        <Nav /> 
     </div>
 </template>
 
@@ -25,7 +25,8 @@ export default {
     height: 20%;
     width: 100%;
     padding-top: 6%;
-    display: inline-block;
+    padding-bottom: 5px;
+    position: relative;
 }
 h1 {
     font-size: 40px;
@@ -39,5 +40,10 @@ h1 {
 }
 a {
     text-decoration: none;
+}
+
+Nav {
+    /* position: absolute;  */
+    float: top;
 }
 </style>
