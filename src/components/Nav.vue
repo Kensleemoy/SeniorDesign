@@ -2,16 +2,21 @@
     <div class="nav">
       <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
       <ul>
-          <a href="sources.html">
-        <li>
-            SOURCES
-        </li>
+          <a href="index.html">
+            <li>
+              HOME
+            </li>
           </a>
-                  <a href="about.html">
-              <li id="bottom-nav">
-                  ABOUT US
-              </li>
-                  </a>
+          <a href="sources.html">
+          <li>
+              SOURCES
+          </li>
+            </a>
+          <a href="about.html">
+            <li id="bottom-nav">
+                ABOUT US
+            </li>
+          </a>
       </ul>
     </div>
 </template>
