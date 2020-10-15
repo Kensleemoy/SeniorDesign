@@ -2,7 +2,9 @@
 Authors: Aubrey Spannagel, Kenslee Moy, & Susan Higginbotham
 *testing*
 
-# template
+##Hosted Website Link: https://cov-idaho.herokuapp.com/
+
+# To Run Locally:
 
 ## Project setup
 ```
