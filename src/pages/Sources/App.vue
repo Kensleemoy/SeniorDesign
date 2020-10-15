@@ -2,15 +2,22 @@
   <div id="app">
     <Header/>
     <h1>Sources</h1>
+	<ul>
+		<li>
+			<a href="https://covidactnow.org/resources#api" target="_blank" rel="noopener">covidactnow.org</a>
+		</li>
+	</ul>
   </div>
 </template>
 
 <script>
+
 export default {
-  name: 'Sources',
-  components: {
-    Header: () => import('@/components/Header.vue'),
-  },
+	name: 'Sources',
+	components: {
+		Header: () => import('@/components/Header.vue'),
+	},
+ 
 }
 </script>
 
