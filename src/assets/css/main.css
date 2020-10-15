@@ -1,8 +1,21 @@
+/* This makes sure there is not weird padding around header */
 html, body {
-    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
     font-family: 'Oswald', sans-serif;
     font-size: 40px;
+    color: #1c4587ff;
+}
+
+.horizontal-container {
+    width: 60%;
+    display: inline-block;
+  }
+
+hr {
+    border: 3px solid #1c4587ff;
+    width: 100%;
 }
