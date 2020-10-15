@@ -23,7 +23,16 @@ export default {
 	},
 	data(){
 		return{
-			state: {},
+			state: {
+        actuals: {
+          hospitalBeds: {
+
+          },
+          icuBeds: {
+
+          },
+        },
+      },
 	}
 	},
 	mounted() {
@@ -36,8 +45,7 @@ export default {
 				const url = "https://api.covidactnow.org/v2/state/ID.json?apiKey=bd6b09ad6c234b8aad900c39489909cf";
 				const response = await fetch (proxyurl + url);
         const data = await response.json();
-        console.log(data);
-        this.state = data;
+        this.state = JSON.parse(JSON.stringify(data));
 			} catch (error) {
 				console.error(error);
 			}
