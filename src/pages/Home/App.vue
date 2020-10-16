@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
   <Header />
     <div class="data" style="position: relative">
 		<div class="short-it">
@@ -107,10 +108,5 @@ a {
     height: 100%;
 }
 
-/* This makes sure there is not weird padding around header */
-html, .idahostats, .natstats {
-    margin: 0;
-    padding: 0;
-}
 
 </style>
