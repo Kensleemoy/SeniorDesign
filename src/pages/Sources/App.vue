@@ -10,6 +10,11 @@
 			<a href="https://covidactnow.org/resources#api" target="_blank" rel="noopener">covidactnow.org</a>
 	</li>
 	</ul>
+  <ul>
+    <li>
+      <a href="https://commons.wikimedia.org/wiki/File:Idaho_map_counties.svg" target="_blank" rel="noopener">Wikimedia: Idaho County Map</a>
+      </li>
+      </ul>
     </div>
 	</div>
 </template>

@@ -1,16 +1,31 @@
 <template>
   <div id="app">
   <Header />
-    <div style="position: relative">
+    <div class="data" style="position: relative">
 		<div class="short-it">
-			<div class="body">
-    <h1>Cases In Idaho</h1>
-    <StateData :state="state" />
-  </div>
+			<div class="idahostats">
+       <h1>Idaho Stats</h1>
+       <StateData :state="state" />
+      </div>
+      <!--<div class="natstats">
+       //<h1>Nationwide Stats</h1>
+       **MOCK DATA**
+       <NationalData :national="national"/>
+       <div>Population: 12</div>
+       <div>Cases: 2000000</div>
+       <div>Deaths: 987345</div>
+       <div>Hospital Beds: 23423 </div>
+       <div>Hospital beds used by Covid: 234234 </div>
+       <div>ICU Beds: 234234</div>
+       <div>ICU beds used by Covid: 234234</div>
+       **MOCK DATA** 
+      </div>-->
 		</div>
-		<div />
+		</div>
+    <div id="map">
+      <img src="@/assets/Idaho_map_counties.png">
+    </div>
 	</div>
-  </div>
 </template>
 
 <script>
@@ -19,7 +34,8 @@ export default {
 	name: 'Home',
 	components: {
 		Header: () => import('@/components/Header.vue'),
-		StateData: () => import('@/components/stateData.vue'),
+    StateData: () => import('@/components/stateData.vue'),
+    // NationalData: () => import('@/components/nationalData.vue'),
 	},
 	data(){
 		return{
@@ -73,9 +89,14 @@ a {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  text-align: left;
   color: #2c3e50;
   float: top;
+}
+
+.data{
+  margin-left: 25%;
+  margin-bottom: 50px;
 }
 
 .short-it div {
@@ -83,11 +104,11 @@ a {
     z-index: 1;
     display: block;
     width: 100%;
-    height: 40px;
+    height: 100%;
 }
 
 /* This makes sure there is not weird padding around header */
-html, body {
+html, .idahostats, .natstats {
     margin: 0;
     padding: 0;
 }
