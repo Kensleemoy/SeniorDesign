@@ -22,10 +22,11 @@
        **MOCK DATA** 
       </div>-->
 		</div>
-		</div>
     <div id="map">
       <img src="@/assets/Idaho_map_counties.png">
     </div>
+		</div>
+
 	</div>
 </template>
 
@@ -108,5 +109,11 @@ a {
     height: 100%;
 }
 
+div#map {
+    position: absolute;
+    right: 0%;
+    left: 39%;
+    top: -11%;
+}
 
 </style>

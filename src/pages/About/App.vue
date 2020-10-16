@@ -6,6 +6,23 @@
   <div class="horizontal-container">
     <hr />
   </div>
+  <div id="desc">
+    <div>We are a group of three Boise State Seniors majoring in Computer Science.</div>
+  </div>
+  <div class="aboutus">
+    <div id="kenslee">
+      <div id="kenslee-photo" class="personal-photo"> <img src="@/assets/pngwing.com.png"> </div>
+      <div class="likes">Likes: Ice Cream and Puppies</div>
+    </div>
+    <div id="susan">
+      <div id="susan-photo" class="personal-photo"> <img src="@/assets/pngwing.com.png"> </div>       
+      <div class="likes">Likes: Flowers and Sunshine</div>
+    </div>
+    <div id="aubrey">
+      <div id="aubrey-photo" class="personal-photo"> <img src="@/assets/pngwing.com.png"> </div>       
+      <div class="likes">Likes: Chocolate and Slides</div>
+    </div>
+  </div>
   </div>
 </template>
 
@@ -26,4 +43,18 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+
+.personal-photo{
+  margin-top: 50px;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+}
+
+#kenslee, #susan, #aubrey {
+    width: 300px;
+    margin: 20px 20px 50px 20px;
+    display: inline-block;
+}
+
 </style>
