@@ -6,7 +6,7 @@
 		<div class="short-it">
 			<div class="idahostats">
        <h1>Idaho Stats</h1>
-       <StateData :state="state" />
+       <StateData />
       </div>
       <!--<div class="natstats">
        //<h1>Nationwide Stats</h1>
@@ -36,39 +36,10 @@ export default {
 	name: 'Home',
 	components: {
 		Header: () => import('@/components/Header.vue'),
-    StateData: () => import('@/components/stateData.vue'),
+        StateData: () => import('@/components/stateData.vue'),
     // NationalData: () => import('@/components/nationalData.vue'),
 	},
-	data(){
-		return{
-			state: {
-        actuals: {
-          hospitalBeds: {
 
-          },
-          icuBeds: {
-
-          },
-        },
-      },
-	}
-	},
-	mounted() {
-		this.getStateData()
-	},
-	methods: {
-		async getStateData(){
-			try {
-				const proxyurl = "https://cors-anywhere.herokuapp.com/";
-				const url = "https://api.covidactnow.org/v2/state/ID.json?apiKey=bd6b09ad6c234b8aad900c39489909cf";
-				const response = await fetch (proxyurl + url);
-        const data = await response.json();
-        this.state = JSON.parse(JSON.stringify(data));
-			} catch (error) {
-				console.error(error);
-			}
-		},
-	}
 }
 </script>
 
