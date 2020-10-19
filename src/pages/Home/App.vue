@@ -5,9 +5,10 @@
     <div class="data" style="position: relative">
 		<div class="short-it">
 			<div class="idahostats">
-       <h1>Idaho Stats</h1>
-       <StateData />
-      </div>
+		<h1>Idaho Stats</h1>
+		<StateData />
+		<CountyData />
+		</div>
       <!--<div class="natstats">
        //<h1>Nationwide Stats</h1>
        **MOCK DATA**
@@ -37,7 +38,7 @@ export default {
 	components: {
 		Header: () => import('@/components/Header.vue'),
         StateData: () => import('@/components/stateData.vue'),
-    // NationalData: () => import('@/components/nationalData.vue'),
+		CountyData: () => import('@/components/countyData.vue'),
 	},
 
 }
