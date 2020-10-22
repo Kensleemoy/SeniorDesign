@@ -2,16 +2,33 @@
   <div id="app">
   <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
   <Header />
-    <div>
+    <div class="data" style="position: relative">
 		<div class="short-it">
-			<div class="body">
-    <h1>Cases In Idaho</h1>
-    <StateData :state="state" />
-  </div>
+			<div class="idahostats">
+		<h1>Idaho Stats</h1>
+		<StateData />
+		<CountyData />
 		</div>
-		<div />
+      <!--<div class="natstats">
+       //<h1>Nationwide Stats</h1>
+       **MOCK DATA**
+       <NationalData :national="national"/>
+       <div>Population: 12</div>
+       <div>Cases: 2000000</div>
+       <div>Deaths: 987345</div>
+       <div>Hospital Beds: 23423 </div>
+       <div>Hospital beds used by Covid: 234234 </div>
+       <div>ICU Beds: 234234</div>
+       <div>ICU beds used by Covid: 234234</div>
+       **MOCK DATA** 
+      </div>-->
+		</div>
+    <div id="map">
+      <img src="@/assets/Idaho_map_counties.png">
+    </div>
+		</div>
+
 	</div>
-  </div>
 </template>
 
 <script>
@@ -20,38 +37,10 @@ export default {
 	name: 'Home',
 	components: {
 		Header: () => import('@/components/Header.vue'),
-		StateData: () => import('@/components/stateData.vue'),
+        StateData: () => import('@/components/stateData.vue'),
+		CountyData: () => import('@/components/countyData.vue'),
 	},
-	data(){
-		return{
-			state: {
-        actuals: {
-          hospitalBeds: {
 
-          },
-          icuBeds: {
-
-          },
-        },
-      },
-	}
-	},
-	mounted() {
-		this.getStateData()
-	},
-	methods: {
-		async getStateData(){
-			try {
-				const proxyurl = "https://cors-anywhere.herokuapp.com/";
-				const url = "https://api.covidactnow.org/v2/state/ID.json?apiKey=bd6b09ad6c234b8aad900c39489909cf";
-				const response = await fetch (proxyurl + url);
-        const data = await response.json();
-        this.state = JSON.parse(JSON.stringify(data));
-			} catch (error) {
-				console.error(error);
-			}
-		},
-	}
 }
 </script>
 
@@ -74,9 +63,14 @@ a {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  text-align: left;
   color: #2c3e50;
   float: top;
+}
+
+.data{
+  margin-left: 25%;
+  margin-bottom: 50px;
 }
 
 .short-it div {
@@ -84,8 +78,14 @@ a {
     z-index: 1;
     display: block;
     width: 100%;
-    height: 40px;
+    height: 100%;
 }
 
+div#map {
+    position: absolute;
+    right: 0%;
+    left: 39%;
+    top: -11%;
+}
 
 </style>

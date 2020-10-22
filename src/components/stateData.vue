@@ -15,9 +15,37 @@
 <script>
   export default {
     name: 'StateData',
-	props: {
-		state: Object,
+	data(){
+		return{
+			state: {
+        actuals: {
+          hospitalBeds: {
+
+          },
+          icuBeds: {
+
+          },
+        },
+      },
+	}
 	},
+	mounted() {
+		this.getStateData()
+	},
+	methods: {
+		async getStateData(){
+			try {
+				const proxyurl = "https://cors-anywhere.herokuapp.com/";
+				const url = "https://api.covidactnow.org/v2/state/ID.json?apiKey=";
+				const key = process.env.VUE_APP_APIKEY;
+				const response = await fetch (proxyurl + url+ key);
+        const data = await response.json();
+        this.state = JSON.parse(JSON.stringify(data));
+			} catch (error) {
+				console.error(error);
+			}
+		},
+	}
   }
 </script>
 
