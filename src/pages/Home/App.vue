@@ -37,8 +37,8 @@ export default {
 	name: 'Home',
 	components: {
 		Header: () => import('@/components/Header.vue'),
-        StateData: () => import('@/components/stateData.vue'),
-		CountyData: () => import('@/components/countyData.vue'),
+        StateData: () => import('@/components/StateData.vue'),
+		CountyData: () => import('@/components/CountyData.vue'),
 	},
 
 }
