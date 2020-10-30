@@ -61,8 +61,14 @@
 				const response = await fetch (proxyurl + url + key);
 				const data = await response.json();
 				var IdahoData = data.filter(function(d){return d.state == "ID"});
-				//console.log(JSON.stringify(IdahoData));
-				this.counties = JSON.parse(JSON.stringify(IdahoData));
+				
+				//if we want to remove the " County" part from County name:
+				var formatData = (JSON.stringify(IdahoData)).replace(/ County/g, "");
+				this.counties = JSON.parse(formatData);
+				
+				//if not, comment out the two lines above, and uncomment line below:
+				//this.counties = JSON.parse(JSON.stringify(IdahoData));
+
 			} catch (error) {
 				console.error(error);
 			}
