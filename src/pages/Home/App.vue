@@ -9,38 +9,22 @@
 		<StateData />
 		<CountyData />
 		</div>
-      <!--<div class="natstats">
-       //<h1>Nationwide Stats</h1>
-       **MOCK DATA**
-       <NationalData :national="national"/>
-       <div>Population: 12</div>
-       <div>Cases: 2000000</div>
-       <div>Deaths: 987345</div>
-       <div>Hospital Beds: 23423 </div>
-       <div>Hospital beds used by Covid: 234234 </div>
-       <div>ICU Beds: 234234</div>
-       <div>ICU beds used by Covid: 234234</div>
-       **MOCK DATA** 
-      </div>-->
+      <div id="map"></div>
 		</div>
-    <div id="map">
-      <img src="@/assets/Idaho_map_counties.png">
-    </div>
 		</div>
-
 	</div>
 </template>
 
 <script>
 
+
 export default {
-	name: 'Home',
+  name: 'Home',
 	components: {
 		Header: () => import('@/components/Header.vue'),
-        StateData: () => import('@/components/stateData.vue'),
-		CountyData: () => import('@/components/countyData.vue'),
-	},
-
+    StateData: () => import('@/components/stateData.vue'),
+    CountyData: () => import('@/components/countyData.vue'),
+  },
 }
 </script>
 
