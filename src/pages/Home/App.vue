@@ -5,28 +5,16 @@
     <div class="data" style="position: relative">
 		<div class="short-it">
 			<div class="idahostats">
-		<h1>Idaho Stats</h1>
-		<StateData />
-		<CountyData />
+				<h1>Idaho Stats</h1>
+				<StateData />
+				<CountyData />
+				<AllCountiesData />
+			</div>
 		</div>
-      <!--<div class="natstats">
-       //<h1>Nationwide Stats</h1>
-       **MOCK DATA**
-       <NationalData :national="national"/>
-       <div>Population: 12</div>
-       <div>Cases: 2000000</div>
-       <div>Deaths: 987345</div>
-       <div>Hospital Beds: 23423 </div>
-       <div>Hospital beds used by Covid: 234234 </div>
-       <div>ICU Beds: 234234</div>
-       <div>ICU beds used by Covid: 234234</div>
-       **MOCK DATA** 
-      </div>-->
+		<div id="map">
+			<img src="@/assets/Idaho_map_counties.png">
 		</div>
-    <div id="map">
-      <img src="@/assets/Idaho_map_counties.png">
-    </div>
-		</div>
+	</div>
 
 	</div>
 </template>
@@ -39,6 +27,7 @@ export default {
 		Header: () => import('@/components/Header.vue'),
         StateData: () => import('@/components/StateData.vue'),
 		CountyData: () => import('@/components/CountyData.vue'),
+		AllCountiesData: ()=> import('@/components/AllCountiesData.vue'),
 	},
 
 }
@@ -85,7 +74,7 @@ div#map {
     position: absolute;
     right: 0%;
     left: 39%;
-    top: -11%;
+    top: -2%;
 }
 
 </style>
