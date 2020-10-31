@@ -9,14 +9,15 @@
 		<StateData />
 		<CountyData />
 		</div>
-      <div id="map"></div>
 		</div>
 		</div>
+      <svg-map :map="usa"/>
 	</div>
 </template>
 
 <script>
-
+import { SvgMap } from "vue-svg-map";
+import usa from "../../../svg-maps/packages/usa.utah";
 
 export default {
   name: 'Home',
@@ -24,11 +25,17 @@ export default {
 		Header: () => import('@/components/Header.vue'),
     StateData: () => import('@/components/stateData.vue'),
     CountyData: () => import('@/components/countyData.vue'),
+    SvgMap
   },
+  data() {
+    return {
+      usa
+    };
+  }
 }
 </script>
 
-<style>
+<style src="vue-svg-map/dist/index.css">
 h3 {
   margin: 40px 0 0;
 }
