@@ -12,9 +12,14 @@
 	</ul>
   <ul>
     <li>
-      <a href="https://commons.wikimedia.org/wiki/File:Idaho_map_counties.svg" target="_blank" rel="noopener">Wikimedia: Idaho County Map</a>
-      </li>
-      </ul>
+      <a href="https://vuejsexamples.com/a-set-of-vue-js-components-to-display-an-interactive-svg-map/" target="_blank" rel="noopener">SVG Map Components</a>
+    </li>
+  </ul>
+    <ul>
+    <li>
+      <a href="https://github.com/VictorCazanave/svg-maps" target="_blank" rel="noopener">SVG Maps</a>
+    </li>
+  </ul>
     </div>
 	</div>
 </template>

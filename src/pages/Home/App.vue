@@ -17,7 +17,7 @@
 
 <script>
 import { SvgMap } from "vue-svg-map";
-import usa from "../../../svg-maps/packages/usa.utah";
+import usa from "../../../svg-maps/packages/usa.idaho";
 
 export default {
   name: 'Home',
