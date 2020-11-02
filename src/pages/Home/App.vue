@@ -11,13 +11,13 @@
 		</div>
 		</div>
 		</div>
-      <svg-map :map="usa"/>
+      <svg-map :map="idaho_map"/>
 	</div>
 </template>
 
 <script>
 import { SvgMap } from "vue-svg-map";
-import usa from "../../../svg-maps/packages/usa.idaho";
+import idaho_map from "../../../svg-maps/packages/usa.idaho";
 
 export default {
   name: 'Home',
@@ -29,13 +29,13 @@ export default {
   },
   data() {
     return {
-      usa
+      idaho_map
     };
   }
 }
 </script>
 
-<style src="vue-svg-map/dist/index.css">
+<style>
 h3 {
   margin: 40px 0 0;
 }
@@ -57,6 +57,7 @@ a {
   text-align: left;
   color: #2c3e50;
   float: top;
+  
 }
 
 .data{
@@ -72,11 +73,32 @@ a {
     height: 100%;
 }
 
-div#map {
+div#map{
     position: absolute;
     right: 0%;
     left: 39%;
     top: -11%;
 }
+
+.svg-map {
+  position: absolute;
+  transform: rotate(-11deg);
+  left: -22%;
+  top: 18%;
+  width: 172%;
+  height: 225%;
+  stroke: #666;
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-linejoin: round;}
+  .svg-map__location {
+    fill: #a1d99b;
+    cursor: pointer; }
+    .svg-map__location:focus, .svg-map__location:hover {
+      fill: #b8e2b3;
+      outline: 0; }
+    .svg-map__location[aria-checked="true"] {
+      fill: #f4bc44; }
+
 
 </style>
