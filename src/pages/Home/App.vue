@@ -11,25 +11,30 @@
 				<AllCountiesData />
 			</div>
 		</div>
-		<div id="map">
-			<img src="@/assets/Idaho_map_counties.png">
 		</div>
-	</div>
-
+      <svg-map :map="idaho_map"/>
+		</div>
 	</div>
 </template>
 
 <script>
+import { SvgMap } from "vue-svg-map";
+import idaho_map from "../../../svg-maps/packages/usa.idaho";
 
 export default {
-	name: 'Home',
+  name: 'Home',
 	components: {
 		Header: () => import('@/components/Header.vue'),
         StateData: () => import('@/components/StateData.vue'),
 		CountyData: () => import('@/components/CountyData.vue'),
-		AllCountiesData: ()=> import('@/components/AllCountiesData.vue'),
+    AllCountiesData: ()=> import('@/components/AllCountiesData.vue'),
+    SvgMap
 	},
-
+  data() {
+    return {
+      idaho_map
+    };
+  }
 }
 </script>
 
@@ -55,6 +60,7 @@ a {
   text-align: left;
   color: #2c3e50;
   float: top;
+  
 }
 
 .data{
@@ -70,11 +76,32 @@ a {
     height: 100%;
 }
 
-div#map {
+div#map{
     position: absolute;
     right: 0%;
     left: 39%;
     top: -2%;
 }
+
+.svg-map {
+  position: absolute;
+  transform: rotate(-11deg);
+  left: -22%;
+  top: 18%;
+  width: 172%;
+  height: 225%;
+  stroke: #666;
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-linejoin: round;}
+  .svg-map__location {
+    fill: #a1d99b;
+    cursor: pointer; }
+    .svg-map__location:focus, .svg-map__location:hover {
+      fill: #b8e2b3;
+      outline: 0; }
+    .svg-map__location[aria-checked="true"] {
+      fill: #f4bc44; }
+
 
 </style>
