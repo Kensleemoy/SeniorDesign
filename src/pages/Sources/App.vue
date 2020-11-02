@@ -5,16 +5,17 @@
     <h1>SOURCES</h1>
     <div class="horizontal-container">
     <hr /> 
-	<ul>
-		<li>
-			<a href="https://covidactnow.org/resources#api" target="_blank" rel="noopener">covidactnow.org</a>
-	</li>
-	</ul>
-  <ul>
-    <li>
-      <a href="https://commons.wikimedia.org/wiki/File:Idaho_map_counties.svg" target="_blank" rel="noopener">Wikimedia: Idaho County Map</a>
-      </li>
-      </ul>
+	<div class="source">
+		Data Validity Statement: Data is presented directly from our API source. More information on their data sources can be found here:
+		<a href="https://docs.google.com/presentation/d/1XmKCBWYZr9VQKFAdWh_D7pkpGGM_oR9cPjj-UrNdMJQ/edit#slide=id.g91040bbb51_413_0" target="_blank" rel="noopener">
+			Covid Act Now - data sources </a>
+	</div>
+	<div class="source">
+		API: <a href="https://covidactnow.org/resources#api" target="_blank" rel="noopener">covidactnow.org</a>
+	</div>
+	<div class="source">
+      Map: <a href="https://commons.wikimedia.org/wiki/File:Idaho_map_counties.svg" target="_blank" rel="noopener">Wikimedia: Idaho County Map</a>
+    </div>
     </div>
 	</div>
 </template>
@@ -37,5 +38,11 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+.horizontal-container{
+	text-align: left;
+}
+.source{
+	margin: 20px;
 }
 </style>
