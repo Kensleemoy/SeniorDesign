@@ -14,7 +14,6 @@
 		</div>
       <svg-map :map="idaho_map"/>
 		</div>
-	</div>
 </template>
 
 <script>
