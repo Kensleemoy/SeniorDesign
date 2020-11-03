@@ -18,6 +18,12 @@ h1 {
     color: #1c4587ff;
 }
 
+.subhead {
+    font-weight: bold;
+    color:#ff9900;
+    font-size: larger;
+}
+
 .horizontal-container {
     width: 60%;
     display: inline-block;

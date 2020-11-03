@@ -1,18 +1,18 @@
 <template>
   <div id="app">
-  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-  <Header />
-    <div class="data" style="position: relative">
-		<div class="short-it">
-			<div class="idahostats">
-				<h1>Idaho Stats</h1>
-				<StateData />
-				<CountyData />
-				<AllCountiesData />
-			</div>
-		</div>
-		</div>
-      <svg-map :map="idaho_map"/>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <Header />
+    <div class="data">
+        <div class="idahostats">
+          <h1>Idaho Stats</h1>
+          <StateData />
+          <CountyData />
+          <AllCountiesData />
+        </div>
+      </div>
+      <div class="map">
+        <svg-map z-index="0" :map="idaho_map"/>
+      </div>
 		</div>
 </template>
 
@@ -38,20 +38,6 @@ export default {
 </script>
 
 <style>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -63,32 +49,23 @@ a {
 }
 
 .data{
-  margin-left: 25%;
+  /* display: relative; */
+  position: relative;
+  margin-left: 325px;
   margin-bottom: 50px;
+  z-index: 3;
 }
 
-.short-it div {
-    bottom: 0;
-    z-index: 1;
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
-div#map{
-    position: absolute;
-    right: 0%;
-    left: 39%;
-    top: -2%;
+.map {
+  position: relative;
+   /* z-index: 1; */
 }
 
 .svg-map {
-  position: absolute;
+  z-index: 1;
   transform: rotate(-11deg);
-  left: -22%;
-  top: 18%;
-  width: 172%;
-  height: 225%;
+  /* width: 1000px;
+  height: 1500px; */
   stroke: #666;
   stroke-width: 1;
   stroke-linecap: round;
@@ -101,6 +78,4 @@ div#map{
       outline: 0; }
     .svg-map__location[aria-checked="true"] {
       fill: #f4bc44; }
-
-
 </style>

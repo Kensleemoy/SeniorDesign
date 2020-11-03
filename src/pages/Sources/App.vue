@@ -6,15 +6,15 @@
     <div class="horizontal-container">
     <hr /> 
 	<div class="source">
-		<span class = "title">Data Validity Statement</span> Data is presented directly from our API source. More information on their data sources can be found here:
+		<span class = "subhead">Data Validity Statement</span> Data is presented directly from our API source. More information on their data sources can be found here:
 		<a href="https://docs.google.com/presentation/d/1XmKCBWYZr9VQKFAdWh_D7pkpGGM_oR9cPjj-UrNdMJQ/edit#slide=id.g91040bbb51_413_0" target="_blank" rel="noopener">
 			Covid Act Now - data sources </a>
 	</div>
 	<div class="source">
-		<span class = "title">API </span> <a href="https://covidactnow.org/resources#api" target="_blank" rel="noopener">covidactnow.org</a>
+		<span class = "subhead">API </span> <a href="https://covidactnow.org/resources#api" target="_blank" rel="noopener">covidactnow.org</a>
 	</div>
 	<div class="source">
-      <span class = "title">Map </span> <a href="https://commons.wikimedia.org/wiki/File:Idaho_map_counties.svg" target="_blank" rel="noopener">Wikimedia: Idaho County Map</a>
+      <span class = "subhead">Map </span> <a href="https://commons.wikimedia.org/wiki/File:Idaho_map_counties.svg" target="_blank" rel="noopener">Wikimedia: Idaho County Map</a>
     </div>
   <ul>
     <li>
@@ -51,11 +51,6 @@ export default {
 }
 .horizontal-container{
 	text-align: left;
-}
-.title{
-	font-weight: bold;
-	color:#ff9900;
-	font-size: larger;
 }
 .source{
 	margin: 20px;
