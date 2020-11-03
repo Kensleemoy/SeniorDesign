@@ -13,7 +13,7 @@
       <div class="idahostats">
         <AllCountiesData />
       </div>
-	  <checkbox-svg-map v-model="selectedLocations" :map="idaho_map" />
+		<checkbox-svg-map v-model="selectedLocations" :map="idaho_map" />
 		</div>
 </template>
 
