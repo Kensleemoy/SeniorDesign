@@ -1,14 +1,16 @@
 <template>
-  <div id="app">
+	<div id="app">
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <Header />
 	<h1>ABOUT US</h1>
-  <div class="horizontal-container">
-    <hr />
-  </div>
-  <div id="desc">
-    <div>We are a group of three Boise State Seniors majoring in Computer Science.</div>
-  </div>
+	<div class="horizontal-container">
+		<hr />
+
+		<div id="desc">
+		We are a group of three Boise State Seniors majoring in Computer Science. We created this website with the goal of 
+		providing Idaho COVID-19 data in a clear and straightforward manner. 
+		</div>
+	</div>
   <div class="aboutus">
     <div id="kenslee">
       <div id="kenslee-photo" class="personal-photo"> <img src="@/assets/pngwing.com.png"> </div>
@@ -43,6 +45,11 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+#desc{
+	text-align: left;
+	line-height: 1.6;
 }
 
 .personal-photo{
