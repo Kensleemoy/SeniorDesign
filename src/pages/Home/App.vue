@@ -69,6 +69,7 @@ export default {
 .svg-map {
   z-index: 1;
   /* display: inline-block; */
+  padding-top: 10px;
   position: absolute;
   transform: rotate(-11deg);
   stroke: rgb(255, 255, 255)56);
