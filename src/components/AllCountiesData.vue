@@ -4,27 +4,21 @@
 			<thead>
 				<tr>
 					<th>County</th>
-					<th>Last updated</th>
 					<th>Population</th>
 					<th>Cases</th>
 					<th>Deaths</th>
 					<th>Hospital Beds</th>
-					<th>Hospital Beds used by Covid</th>
 					<th>ICU Beds</th>
-					<th>ICU Beds used by Covid</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr v-for = "county in counties" v-bind:key="county.fips">
+				<tr v-for = "county in counties" v-bind:key="county.fips" v-bind:id="county.county">
 					<td>{{county.county}}</td>
-					<td>{{county.lastUpdatedDate}}</td>
 					<td>{{county.population}}</td>
 					<td>{{county.actuals.cases}}</td>
 					<td>{{county.actuals.deaths}}</td>
 					<td>{{county.actuals.hospitalBeds.capacity}}</td>
-					<td>{{county.actuals.hospitalBeds.currentUsageCovid}}</td>
 					<td>{{county.actuals.icuBeds.capacity}}</td>
-					<td>{{county.actuals.icuBeds.currentUsageCovid}}</td>
 				</tr>
 			</tbody>
 		</table>
