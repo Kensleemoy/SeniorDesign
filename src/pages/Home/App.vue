@@ -3,15 +3,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <Header />
     <div class="data">
-        <div class="idahostats">
-          <h1>Idaho Stats</h1>
-          <StateData />
-          <CountyData />
-          <AllCountiesData />
-        </div>
+        <h1>Idaho Stats</h1>
+        <StateData />
+        <CountyData />
       </div>
       <div class="map">
         <svg-map :map="idaho_map"/>
+      </div>
+      <div class="idahostats">
+        <AllCountiesData />
       </div>
 		</div>
 </template>
@@ -54,10 +54,14 @@ export default {
   z-index: 3;
   margin-left: 22%;
   width: 30%;
+  padding: 10px;
 }
 
-.map {
-  /* position: absolute; */
+.idahostats {
+  position: relative;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 140px;
 }
 
 .svg-map {
