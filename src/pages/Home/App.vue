@@ -11,7 +11,7 @@
         </div>
       </div>
       <div class="map">
-        <svg-map z-index="0" :map="idaho_map"/>
+        <svg-map :map="idaho_map"/>
       </div>
 		</div>
 </template>
@@ -49,33 +49,36 @@ export default {
 }
 
 .data{
-  /* display: relative; */
+  /* display: inline-block; */
   position: relative;
-  margin-left: 325px;
-  margin-bottom: 50px;
   z-index: 3;
+  margin-left: 22%;
+  width: 30%;
 }
 
 .map {
-  position: relative;
-   /* z-index: 1; */
+  /* position: absolute; */
 }
 
 .svg-map {
   z-index: 1;
+  /* display: inline-block; */
+  position: absolute;
   transform: rotate(-11deg);
-  /* width: 1000px;
-  height: 1500px; */
-  stroke: #666;
+  stroke: rgb(255, 255, 255)56);
+  left: -22%;
+  top: 100px;
+  width: 172%;
+  height: 225%;
   stroke-width: 1;
   stroke-linecap: round;
   stroke-linejoin: round;}
   .svg-map__location {
-    fill: #a1d99b;
+    fill: #1c4587ff;
     cursor: pointer; }
     .svg-map__location:focus, .svg-map__location:hover {
-      fill: #b8e2b3;
+      fill: #ff9900;
       outline: 0; }
     .svg-map__location[aria-checked="true"] {
-      fill: #f4bc44; }
+      fill: #ff9900; }
 </style>
