@@ -36,6 +36,7 @@ export default {
     margin-top: -16px;
     font-family: 'Oswald', sans-serif;
     position: absolute;
+    z-index: 100;
 }
 ul {
   list-style-type: none;

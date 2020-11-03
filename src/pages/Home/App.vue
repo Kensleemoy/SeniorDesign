@@ -1,19 +1,19 @@
 <template>
   <div id="app">
-  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-  <Header />
-    <div class="data" style="position: relative">
-		<div class="short-it">
-			<div class="idahostats">
-				<h1>Idaho Stats</h1>
-				<StateData />
-				<CountyData />
-				<AllCountiesData />
-			</div>
-		</div>
-		</div>
-     <!--<svg-map :map="idaho_map"/> -->
-	<checkbox-svg-map v-model="selectedLocations" :map="idaho_map" />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <Header />
+    <div class="data">
+        <h1>Idaho Stats</h1>
+        <StateData />
+        <CountyData />
+      </div>
+      <div class="map">
+        <svg-map :map="idaho_map"/>
+      </div>
+      <div class="idahostats">
+        <AllCountiesData />
+      </div>
+	  <checkbox-svg-map v-model="selectedLocations" :map="idaho_map" />
 		</div>
 </template>
 
@@ -40,20 +40,6 @@ export default {
 </script>
 
 <style>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -65,44 +51,40 @@ a {
 }
 
 .data{
-  margin-left: 25%;
-  margin-bottom: 50px;
+  /* display: inline-block; */
+  position: relative;
+  z-index: 3;
+  margin-left: 22%;
+  width: 30%;
+  padding: 10px;
 }
 
-.short-it div {
-    bottom: 0;
-    z-index: 1;
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
-div#map{
-    position: absolute;
-    right: 0%;
-    left: 39%;
-    top: -2%;
+.idahostats {
+  position: relative;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 140px;
 }
 
 .svg-map {
+  z-index: 1;
+  /* display: inline-block; */
   position: absolute;
   transform: rotate(-11deg);
+  stroke: rgb(255, 255, 255)56);
   left: -22%;
-  top: 18%;
+  top: 100px;
   width: 172%;
   height: 225%;
-  stroke: #666;
   stroke-width: 1;
   stroke-linecap: round;
   stroke-linejoin: round;}
   .svg-map__location {
-    fill: #a1d99b;
+    fill: #1c4587ff;
     cursor: pointer; }
     .svg-map__location:focus, .svg-map__location:hover {
-      fill: #b8e2b3;
+      fill: #ff9900;
       outline: 0; }
     .svg-map__location[aria-checked="true"] {
-      fill: #f4bc44; }
-
-
+      fill: #ff9900; }
 </style>
