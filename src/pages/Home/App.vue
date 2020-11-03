@@ -12,12 +12,13 @@
 			</div>
 		</div>
 		</div>
-      <svg-map :map="idaho_map"/>
+     <!--<svg-map :map="idaho_map"/> -->
+	<checkbox-svg-map v-model="selectedLocations" :map="idaho_map" />
 		</div>
 </template>
 
 <script>
-import { SvgMap } from "vue-svg-map";
+import { CheckboxSvgMap } from "vue-svg-map";
 import idaho_map from "../../svg-maps/packages/usa.idaho";
 
 export default {
@@ -27,11 +28,12 @@ export default {
         StateData: () => import('@/components/StateData.vue'),
 		CountyData: () => import('@/components/CountyData.vue'),
     AllCountiesData: ()=> import('@/components/AllCountiesData.vue'),
-    SvgMap
+    CheckboxSvgMap
 	},
   data() {
     return {
-      idaho_map
+		idaho_map,
+		selectedLocations: []
     };
   }
 }
