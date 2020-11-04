@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+	<div id="app">
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <Header />
     <div class="data">
@@ -7,19 +7,27 @@
         <StateData />
         <CountyData />
       </div>
-      <div class="map">
-        <svg-map :map="idaho_map"/>
-      </div>
+		<div class="map">
+		<checkbox-svg-map v-model="selectedLocations" :map="idaho_map" :location-class="getLocationClass"
+        @mouseover="pointLocation"
+        @mouseout="unpointLocation"
+        @mousemove="moveOnLocation"/>
+		<div class="idaho__tooltip" :style="tooltipStyle">
+			{{ pointedLocation }}
+		</div>
+		</div>
+
       <div class="idahostats">
         <AllCountiesData />
       </div>
-		<checkbox-svg-map v-model="selectedLocations" :map="idaho_map" />
+		
 		</div>
 </template>
 
 <script>
 import { CheckboxSvgMap } from "vue-svg-map";
 import idaho_map from "../../svg-maps/packages/usa.idaho";
+import { getLocationName } from "../../utilities"
 
 export default {
   name: 'Home',
@@ -33,10 +41,35 @@ export default {
   data() {
     return {
 		idaho_map,
-		selectedLocations: []
+		selectedLocations: [],
+		pointedLocation: null,
+		tooltipStyle: null,
     };
-  }
+	
+  },
+	methods: {
+		pointLocation(event) {
+			this.pointedLocation = getLocationName(event.target)
+		},
+		unpointLocation() {
+			this.pointedLocation = null
+			this.tooltipStyle = { display: 'none' }
+		},
+		moveOnLocation(event) {
+			this.tooltipStyle = {
+				display: 'block',
+				top: `${event.clientY + 10}px`,
+				left: `${event.clientX - 100}px`,
+			}
+		},
+		getLocationClass(location, index) {
+			// Generate heat map
+			return `svg-map__location svg-map__location--id${index % 4}`
+		},
+	},
+
 }
+
 </script>
 
 <style>
@@ -90,4 +123,14 @@ export default {
 
 .svg-map__location[aria-checked="true"] {
       fill: #ff9900; }
+
+.idaho__tooltip {
+    z-index: 2;
+	position: fixed;
+    width: 80px;
+    padding: 10px;
+    border: 1px solid #a9a9a9;
+    background-color: #fff;
+}
+
 </style>
