@@ -19,7 +19,6 @@
 		
       <div class="idahostats">
 			<div>
-			Selected locations:
 			<table>
 			<thead>
 				<tr>
@@ -59,8 +58,7 @@ export default {
 		Header: () => import('@/components/Header.vue'),
         StateData: () => import('@/components/StateData.vue'),
 		CountyData: () => import('@/components/CountyData.vue'),
-		//AllCountiesData: ()=> import('@/components/AllCountiesData.vue'),
-    CheckboxSvgMap
+		CheckboxSvgMap
 	},
   data() {
     return {
