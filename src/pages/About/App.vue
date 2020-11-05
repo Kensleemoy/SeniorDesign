@@ -30,7 +30,7 @@
       <div id="aubrey-photo" class="personal-photo"> <img src="@/assets/wednesday-griffin.png"> </div>       
       <div class="likes">
         <h3 class="subhead">AUBREY</h3>
-        Likes: Chocolate and Slides
+        Likes: Playing with Wednesday and Griffin
         </div>
     </div>
   </div>
