@@ -185,9 +185,11 @@ export default {
 
 .idahostats {
   position: relative;
-  padding-left: 20px;
+  /* padding-left: 80px; */
+  padding-left: 22%;
   padding-right: 20px;
-  padding-top: 140px;
+  padding-top: 20px;
+  width: 40%;
 }
 
 .svg-map {
@@ -197,13 +199,19 @@ export default {
   position: absolute;
   transform: rotate(-11deg);
   stroke: rgb(255, 255, 255)56);
-  left: -22%;
+  left: -10%;
   top: 100px;
   width: 172%;
   height: 225%;
   stroke-width: 1;
   stroke-linecap: round;
-  stroke-linejoin: round;}
+  stroke-linejoin: round;
+}
+
+th {
+	color: white;
+	background-color: black;
+}
 
 .svg-map__location {
     fill: #1c4587ff;
@@ -238,7 +246,7 @@ export default {
 	}
 	td, th {
 		padding: 10 10;
-		font-size:20px;
+		font-size:auto;
 	}
 	th {
 		background-color: #1c4587ff;
