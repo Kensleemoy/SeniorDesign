@@ -13,7 +13,7 @@
 	</div>
   <div class="aboutus">
     <div id="kenslee">
-      <div id="kenslee-photo" class="personal-photo"> <img src="@/assets/pngwing.com.png"> </div>
+      <div id="kenslee-photo" class="personal-photo"> <img src="@/assets/kenslee_dog_pic.jpg"> </div>
       <div class="likes">
         <h3 class="subhead">KENSLEE</h3>
         Likes: Ice Cream and Puppies
