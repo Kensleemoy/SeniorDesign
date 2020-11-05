@@ -21,7 +21,7 @@
 			<div class="description">
 				Select counties on the map to view their data in the table below.
 			</div>
-			<div>
+			<div class="idahostats-table">
 			<table>
 			<thead>
 				<tr>
@@ -187,11 +187,12 @@ export default {
 
 .idahostats {
   position: relative;
-  /* padding-left: 80px; */
   padding-left: 22%;
-  padding-right: 20px;
-  padding-top: 20px;
   width: 37%;
+}
+
+.idahostats-table {
+  padding-top: 20px;
 }
 
 .svg-map {
