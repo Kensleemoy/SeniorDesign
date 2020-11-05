@@ -191,7 +191,7 @@ export default {
   padding-left: 22%;
   padding-right: 20px;
   padding-top: 20px;
-  width: 40%;
+  width: 37%;
 }
 
 .svg-map {
