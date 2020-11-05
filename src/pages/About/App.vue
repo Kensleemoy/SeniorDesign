@@ -20,10 +20,10 @@
         </div>
     </div>
     <div id="susan">
-      <div id="susan-photo" class="personal-photo"> <img src="@/assets/pngwing.com.png"> </div>       
+      <div id="susan-photo" class="personal-photo"> <img src="@/assets/HeraLuna2.png"> </div>       
       <div class="likes">
         <h3 class="subhead">SUSAN</h3>
-        Likes: Flowers and Sunshine
+        Likes: Going on adventures with Hera and Luna
         </div>
     </div>
     <div id="aubrey">
