@@ -18,8 +18,8 @@
 		
       <div class="idahostats">
 			<h1>County Stats</h1>
-			<div>
-			Select counties on the map to view their data in the table below.
+			<div class="description">
+				Select counties on the map to view their data in the table below.
 			</div>
 			<div>
 			<table>
@@ -215,6 +215,10 @@ th {
 	background-color: black;
 }
 
+.description {
+	padding-bottom: 10px;
+}
+
 .svg-map__location {
     fill: #1c4587ff;
     cursor: pointer; }
@@ -243,18 +247,19 @@ th {
 		width: 100%;
 	}
 	table, th, td {
-		border: 1px solid #a2937e;
+		border: 1px solid #6b6b6b;
 		text-align:center;
 	}
 	td, th {
 		padding: 10 10;
 		font-size:auto;
+		background-color: rgb(255, 238, 213);
 	}
 	th {
 		background-color: #1c4587ff;
-		color:#ff9900;
+		color:#ffffff;
 	}
 	td.tableMsg{
-		align:center;
+		text-align:center;
 	}
 </style>
