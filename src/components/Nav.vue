@@ -33,7 +33,7 @@ export default {
     height: 30%;
     text-align: left;
     width: 18%;
-    margin-top: -16px;
+    margin-top: -20px;
     font-family: 'Oswald', sans-serif;
     position: absolute;
     z-index: 100;

@@ -197,23 +197,17 @@ export default {
 
 .svg-map {
   z-index: 1;
-  /* display: inline-block; */
   padding-top: 10px;
   position: absolute;
   transform: rotate(-11deg);
-  stroke: rgb(255, 255, 255)56);
+  stroke: #ffffff;
   left: -10%;
   top: 100px;
   width: 172%;
   height: 225%;
-  stroke-width: 1;
+  stroke-width: 0.5px;
   stroke-linecap: round;
   stroke-linejoin: round;
-}
-
-th {
-	color: white;
-	background-color: black;
 }
 
 .description {
@@ -225,11 +219,13 @@ th {
     cursor: pointer; }
 
 .svg-map__location:focus, .svg-map__location:hover {
-      fill: #ff9900;
-      outline: 0; }
+    fill: #ff9900;
+	outline: 0;
+}
 
 .svg-map__location[aria-checked="true"] {
-      fill: #ff9900; }
+	fill: #ff9900; 
+}
 
 .idaho__tooltip {
     z-index: 2;
@@ -248,13 +244,13 @@ th {
 		width: 100%;
 	}
 	table, th, td {
-		border: 1px solid #6b6b6b;
+		border: 1px solid #666666;
 		text-align:center;
 	}
 	td, th {
 		padding: 10 10;
 		font-size:auto;
-		background-color: rgb(255, 238, 213);
+		background-color: rgb(255, 245, 231);
 	}
 	th {
 		background-color: #1c4587ff;

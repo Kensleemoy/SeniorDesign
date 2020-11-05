@@ -14,15 +14,24 @@
   <div class="aboutus">
     <div id="kenslee">
       <div id="kenslee-photo" class="personal-photo"> <img src="@/assets/pngwing.com.png"> </div>
-      <div class="likes">Likes: Ice Cream and Puppies</div>
+      <div class="likes">
+        <h3 class="subhead">KENSLEE</h3>
+        Likes: Ice Cream and Puppies
+        </div>
     </div>
     <div id="susan">
       <div id="susan-photo" class="personal-photo"> <img src="@/assets/pngwing.com.png"> </div>       
-      <div class="likes">Likes: Flowers and Sunshine</div>
+      <div class="likes">
+        <h3 class="subhead">SUSAN</h3>
+        Likes: Flowers and Sunshine
+        </div>
     </div>
     <div id="aubrey">
       <div id="aubrey-photo" class="personal-photo"> <img src="@/assets/pngwing.com.png"> </div>       
-      <div class="likes">Likes: Chocolate and Slides</div>
+      <div class="likes">
+        <h3 class="subhead">AUBREY</h3>
+        Likes: Chocolate and Slides
+        </div>
     </div>
   </div>
   </div>
