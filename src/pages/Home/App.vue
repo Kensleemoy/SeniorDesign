@@ -80,12 +80,15 @@ export default {
   stroke-width: 1;
   stroke-linecap: round;
   stroke-linejoin: round;}
-  .svg-map__location {
+
+.svg-map__location {
     fill: #1c4587ff;
     cursor: pointer; }
-    .svg-map__location:focus, .svg-map__location:hover {
+
+.svg-map__location:focus, .svg-map__location:hover {
       fill: #ff9900;
       outline: 0; }
-    .svg-map__location[aria-checked="true"] {
+
+.svg-map__location[aria-checked="true"] {
       fill: #ff9900; }
 </style>
