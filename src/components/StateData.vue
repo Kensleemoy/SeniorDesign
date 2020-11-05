@@ -1,13 +1,13 @@
 <template>
   <div id="stateData">
-	<div> Last updated on {{state.lastUpdatedDate}}</div>
-	<div>Population: {{state.population}}</div>
-	<div>Cases: {{state.actuals.cases}}</div>
-	<div>Deaths: {{state.actuals.deaths}}</div>
-	<div>Hospital Beds: {{state.actuals.hospitalBeds.capacity}}</div>
-	<div>Hospital beds used by Covid: {{state.actuals.hospitalBeds.currentUsageCovid}}</div>
-	<div>ICU Beds: {{state.actuals.icuBeds.capacity}}</div>
-	<div>ICU beds used by Covid: {{state.actuals.icuBeds.currentUsageCovid}}</div>
+	<div><span class = "subhead">Last updated on: </span> {{state.lastUpdatedDate}}</div>
+	<div><span class = "subhead">Population: </span> {{state.population}}</div>
+	<div><span class = "subhead">Cases: </span>{{state.actuals.cases}}</div>
+	<div><span class = "subhead">Deaths:</span> {{state.actuals.deaths}}</div>
+	<div><span class = "subhead">Hospital Beds: </span>{{state.actuals.hospitalBeds.capacity}}</div>
+	<div><span class = "subhead">Hospital beds used by Covid:</span> {{state.actuals.hospitalBeds.currentUsageCovid}}</div>
+	<div><span class = "subhead">ICU Beds:</span> {{state.actuals.icuBeds.capacity}}</div>
+	<div><span class = "subhead">ICU beds used by Covid:</span> {{state.actuals.icuBeds.currentUsageCovid}}</div>
 	
   </div>
 </template>

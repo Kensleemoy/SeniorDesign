@@ -5,7 +5,6 @@
     <div class="data">
         <h1>Idaho Stats</h1>
         <StateData />
-        <CountyData />
       </div>
 		<div class="map">
 		<checkbox-svg-map v-model="selectedLocations" :map="idaho_map" :location-class="getLocationClass"
@@ -18,6 +17,10 @@
 		</div>
 		
       <div class="idahostats">
+			<h1>County Stats</h1>
+			<div>
+			Select counties on the map to view their data in the table below.
+			</div>
 			<div>
 			<table>
 			<thead>
@@ -57,7 +60,6 @@ export default {
 	components: {
 		Header: () => import('@/components/Header.vue'),
         StateData: () => import('@/components/StateData.vue'),
-		CountyData: () => import('@/components/CountyData.vue'),
 		CheckboxSvgMap
 	},
   data() {
