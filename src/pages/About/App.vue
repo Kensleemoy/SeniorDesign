@@ -27,7 +27,7 @@
         </div>
     </div>
     <div id="aubrey">
-      <div id="aubrey-photo" class="personal-photo"> <img src="@/assets/pngwing.com.png"> </div>       
+      <div id="aubrey-photo" class="personal-photo"> <img src="@/assets/wednesday-griffin.png"> </div>       
       <div class="likes">
         <h3 class="subhead">AUBREY</h3>
         Likes: Chocolate and Slides
