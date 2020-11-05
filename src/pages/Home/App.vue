@@ -16,11 +16,34 @@
 			{{ pointedLocation }}
 		</div>
 		</div>
-
-      <div class="idahostats">
-        <AllCountiesData />
-      </div>
 		
+      <div class="idahostats">
+			<div>
+			Selected locations:
+			<table>
+			<thead>
+				<tr>
+					<th>County</th>
+					<th>Population</th>
+					<th>Cases</th>
+					<th>Deaths</th>
+					<th>Hospital Beds</th>
+					<th>ICU Beds</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr v-for="location in selectedLocations" :key="location">
+					<td>{{findCounty(location)}}</td>
+					<td>{{findPop(location)}}</td>
+					<td>{{findCases(location)}}</td>
+					<td>{{findDeaths(location)}}</td>
+					<td>{{findHospBeds(location)}}</td>
+					<td>{{findICUBeds(location)}}</td>
+				</tr>
+			</tbody>
+			</table>
+		</div>
+      </div>
 		</div>
 </template>
 
@@ -28,6 +51,7 @@
 import { CheckboxSvgMap } from "vue-svg-map";
 import idaho_map from "../../svg-maps/packages/usa.idaho";
 import { getLocationName } from "../../utilities"
+import { getSelectedLocationName } from "../../utilities"
 
 export default {
   name: 'Home',
@@ -35,7 +59,7 @@ export default {
 		Header: () => import('@/components/Header.vue'),
         StateData: () => import('@/components/StateData.vue'),
 		CountyData: () => import('@/components/CountyData.vue'),
-    AllCountiesData: ()=> import('@/components/AllCountiesData.vue'),
+		//AllCountiesData: ()=> import('@/components/AllCountiesData.vue'),
     CheckboxSvgMap
 	},
   data() {
@@ -44,10 +68,44 @@ export default {
 		selectedLocations: [],
 		pointedLocation: null,
 		tooltipStyle: null,
+		counties: {
+			actuals: {
+			hospitalBeds: {
+
+			},
+			icuBeds: {
+
+			},
+			},
+		},
+
     };
 	
   },
+	mounted() {
+		this.getCountiesData()
+	},
 	methods: {
+		async getCountiesData(){
+			try {
+				const proxyurl = "https://cors-anywhere.herokuapp.com/";
+				const url = "https://api.covidactnow.org/v2/counties.json?apiKey=";
+				const key = process.env.VUE_APP_APIKEY;
+				const response = await fetch (proxyurl + url + key);
+				const data = await response.json();
+				var IdahoData = data.filter(function(d){return d.state == "ID"});
+				
+				//if we want to remove the " County" part from County name:
+				var formatData = (JSON.stringify(IdahoData)).replace(/ County/g, "");
+				this.counties = JSON.parse(formatData);
+				
+				//if not, comment out the two lines above, and uncomment line below:
+				//this.counties = JSON.parse(JSON.stringify(IdahoData));
+
+			} catch (error) {
+				console.error(error);
+			}
+		},
 		pointLocation(event) {
 			this.pointedLocation = getLocationName(event.target)
 		},
@@ -66,7 +124,42 @@ export default {
 			// Generate heat map
 			return `svg-map__location svg-map__location--id${index % 4}`
 		},
-	},
+		getSelectedLocationName,
+		tmpValObj(location){
+			let x = getSelectedLocationName(idaho_map, location);
+			var valObj = this.counties.filter(function(elem){
+				if(elem.county == x){
+					console.log(elem.county);
+					return elem;
+				}
+			});			
+			return valObj[0];
+		},
+		findCounty(location){
+			let x = this.tmpValObj(location);			
+			return x.county;
+		},
+		findPop(location){
+			let x = this.tmpValObj(location);			
+			return x.population;
+		},
+		findCases(location){
+			let x = this.tmpValObj(location);			
+			return x.actuals.cases;
+		},
+		findDeaths(location){
+			let x = this.tmpValObj(location);			
+			return x.actuals.deaths;
+		},
+		findHospBeds(location){
+			let x = this.tmpValObj(location);			
+			return x.actuals.hospitalBeds.capacity;
+		},
+		findICUBeds(location){
+			let x = this.tmpValObj(location);			
+			return x.actuals.icuBeds.capacity;
+		},
+	},	
 
 }
 
@@ -133,4 +226,26 @@ export default {
     background-color: #fff;
 }
 
+	.empty-table {
+		text-align: center;
+	}
+	table {
+		border-collapse: collapse;
+		width: 100%;
+	}
+	table, th, td {
+		border: 1px solid #a2937e;
+		text-align:center;
+	}
+	td, th {
+		padding: 10 10;
+		font-size:20px;
+	}
+	th {
+		background-color: #1c4587ff;
+		color:#ff9900;
+	}
+	td.tableMsg{
+		align:center;
+	}
 </style>
