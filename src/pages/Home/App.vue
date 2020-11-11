@@ -249,29 +249,33 @@ th {
 		width: 100%;
 	}
 	table, th, td {
-		border: 1px solid #6b6b6b;
+		/*border: 1px solid #6b6b6b;*/
+		border-collapse: collapse;
 		text-align:center;
+		padding: 10 10;
+		
 	}
 	td, th {
 		padding: 10 10;
 		font-size:auto;
-		background-color: rgb(255, 238, 213);
+		background-color: rgb(189, 197, 182);
 	}
 	th {
 		background-color: #1c4587ff;
 		color:#ffffff;
 	}
+
 	td.tableMsg{
 		text-align:center;
 	}
-	
-	.fade-enter-active, .fade-leave-active 
+	.fade-enter-active, .fade-leave-active
 	{
-		transition: all 1s;
+		position: absolute;
+		transition: all .75s;
 	}
 	.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ 
 	{
 		opacity: 0;
-		transform: translateY(-30px);
+		transform: translateY(-25px);
 	}
 </style>
