@@ -33,14 +33,16 @@
 					<th>ICU Beds</th>
 				</tr>
 			</thead>
-				<tr v-for="location in selectedLocations" :key="location">
-					<td>{{findCounty(location)}}</td>
-					<td>{{findPop(location)}}</td>
-					<td>{{findCases(location)}}</td>
-					<td>{{findDeaths(location)}}</td>
-					<td>{{findHospBeds(location)}}</td>
-					<td>{{findICUBeds(location)}}</td>
-				</tr>
+				<tbody name="fade" is="transition-group">
+					<tr v-for="location in selectedLocations" :key="location">
+						<td>{{findCounty(location)}}</td>
+						<td>{{findPop(location)}}</td>
+						<td>{{findCases(location)}}</td>
+						<td>{{findDeaths(location)}}</td>
+						<td>{{findHospBeds(location)}}</td>
+						<td>{{findICUBeds(location)}}</td>
+					</tr>
+				</tbody>
 			</table>
 		</div>
       </div>
@@ -262,11 +264,14 @@ th {
 	td.tableMsg{
 		text-align:center;
 	}
-.list-enter-active, .list-leave-active {
-  transition: all 1s;
-}
-.list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
-  opacity: 0;
-  transform: translateY(30px);
-}
+	
+	.fade-enter-active, .fade-leave-active 
+	{
+		transition: all 1s;
+	}
+	.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ 
+	{
+		opacity: 0;
+		transform: translateY(-30px);
+	}
 </style>
