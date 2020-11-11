@@ -33,7 +33,6 @@
 					<th>ICU Beds</th>
 				</tr>
 			</thead>
-			<tbody>
 				<tr v-for="location in selectedLocations" :key="location">
 					<td>{{findCounty(location)}}</td>
 					<td>{{findPop(location)}}</td>
@@ -42,7 +41,6 @@
 					<td>{{findHospBeds(location)}}</td>
 					<td>{{findICUBeds(location)}}</td>
 				</tr>
-			</tbody>
 			</table>
 		</div>
       </div>
@@ -52,8 +50,8 @@
 <script>
 import { CheckboxSvgMap } from "vue-svg-map";
 import idaho_map from "../../svg-maps/packages/usa.idaho";
-import { getLocationName } from "../../utilities"
-import { getSelectedLocationName } from "../../utilities"
+import { getLocationName } from "../../utilities";
+import { getSelectedLocationName } from "../../utilities";
 
 export default {
   name: 'Home',
@@ -129,7 +127,7 @@ export default {
 			let x = getSelectedLocationName(idaho_map, location);
 			var valObj = this.counties.filter(function(elem){
 				if(elem.county == x){
-					console.log(elem.county);
+					//console.log(elem.county);
 					return elem;
 				}
 			});			
@@ -159,6 +157,7 @@ export default {
 			let x = this.tmpValObj(location);			
 			return x.actuals.icuBeds.capacity;
 		},
+
 	},	
 
 }
@@ -263,4 +262,11 @@ th {
 	td.tableMsg{
 		text-align:center;
 	}
+.list-enter-active, .list-leave-active {
+  transition: all 1s;
+}
+.list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: translateY(30px);
+}
 </style>
