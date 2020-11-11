@@ -11,7 +11,7 @@
         @mouseover="pointLocation"
         @mouseout="unpointLocation"
         @mousemove="moveOnLocation"/>
-		<div class="idaho__tooltip" :style="tooltipStyle">
+		<div v-if="pointedLocation !== null" class="idaho__tooltip" :style="tooltipStyle">
 			{{ pointedLocation }}
 		</div>
 		</div>
@@ -121,7 +121,6 @@ export default {
 			}
 		},
 		getLocationClass(location, index) {
-			// Generate heat map
 			return `svg-map__location svg-map__location--id${index % 4}`
 		},
 		getSelectedLocationName,
