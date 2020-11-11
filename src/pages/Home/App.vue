@@ -230,7 +230,8 @@ export default {
 .idaho__tooltip {
     z-index: 2;
 	position: fixed;
-    width: 80px;
+    text-align: center;
+	width: 100px;
     padding: 10px;
     border: 1px solid #a9a9a9;
     background-color: #fff;
