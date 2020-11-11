@@ -88,7 +88,7 @@ export default {
 	methods: {
 		async getCountiesData(){
 			try {
-				const proxyurl = "https://cors-anywhere.herokuapp.com/";
+				const proxyurl = "https://hidden-fortress-01637.herokuapp.com/";
 				const url = "https://api.covidactnow.org/v2/counties.json?apiKey=";
 				const key = process.env.VUE_APP_APIKEY;
 				const response = await fetch (proxyurl + url + key);
@@ -128,7 +128,7 @@ export default {
 			let x = getSelectedLocationName(idaho_map, location);
 			var valObj = this.counties.filter(function(elem){
 				if(elem.county == x){
-					console.log(elem.county);
+					//console.log(elem.county);
 					return elem;
 				}
 			});			

@@ -35,7 +35,7 @@
 	methods: {
 		async getStateData(){
 			try {
-				const proxyurl = "https://cors-anywhere.herokuapp.com/";
+				const proxyurl = "https://hidden-fortress-01637.herokuapp.com/"; 
 				const url = "https://api.covidactnow.org/v2/state/ID.json?apiKey=";
 				const key = process.env.VUE_APP_APIKEY;
 				const response = await fetch (proxyurl + url+ key);
