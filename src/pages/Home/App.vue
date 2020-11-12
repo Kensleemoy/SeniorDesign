@@ -2,11 +2,11 @@
 	<div id="app">
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <Header />
-    <div class="data">
+    <div v-if="!loading" class="data">
         <h1>Idaho Stats</h1>
-        <StateData />
-      </div>
-		<div class="map">
+		<StateData />
+	</div>
+	<div v-if="!loading" class="map">
 		<checkbox-svg-map v-model="selectedLocations" :map="idaho_map" :location-class="getLocationClass"
         @mouseover="pointLocation"
         @mouseout="unpointLocation"
@@ -14,39 +14,42 @@
 		<div v-if="pointedLocation !== null" class="idaho__tooltip" :style="tooltipStyle">
 			{{ pointedLocation }}
 		</div>
-		</div>
+	</div>
 		
-      <div class="idahostats">
+		<div v-if="!loading" class="idahostats">
 			<h1>County Stats</h1>
 			<div class="description">
 				Select counties on the map to view their data in the table below.
 			</div>
 			<div class="idahostats-table">
-			<table>
-			<thead>
-				<tr>
-					<th>County</th>
-					<th>Population</th>
-					<th>Cases</th>
-					<th>Deaths</th>
-					<th>Hospital Beds</th>
-					<th>ICU Beds</th>
-				</tr>
-			</thead>
-				<tbody name="fade" is="transition-group">
-					<tr v-for="location in selectedLocations" :key="location">
-						<td>{{findCounty(location)}}</td>
-						<td>{{findPop(location)}}</td>
-						<td>{{findCases(location)}}</td>
-						<td>{{findDeaths(location)}}</td>
-						<td>{{findHospBeds(location)}}</td>
-						<td>{{findICUBeds(location)}}</td>
-					</tr>
-				</tbody>
-			</table>
+				<table>
+					<thead>
+						<tr>
+							<th>County</th>
+							<th>Population</th>
+							<th>Cases</th>
+							<th>Deaths</th>
+							<th>Hospital Beds</th>
+							<th>ICU Beds</th>
+						</tr>
+					</thead>
+					<tbody name="fade" is="transition-group">
+						<tr v-for="location in selectedLocations" :key="location">
+							<td>{{findCounty(location)}}</td>
+							<td>{{findPop(location)}}</td>
+							<td>{{findCases(location)}}</td>
+							<td>{{findDeaths(location)}}</td>
+							<td>{{findHospBeds(location)}}</td>
+							<td>{{findICUBeds(location)}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
-      </div>
+		<div class="spinner" v-if="loading">
+			<semipolar-spinner :animation-duration="2000" :size="65" color="#ff9900"/>
 		</div>
+	</div>
 </template>
 
 <script>
@@ -54,13 +57,15 @@ import { CheckboxSvgMap } from "vue-svg-map";
 import idaho_map from "../../svg-maps/packages/usa.idaho";
 import { getLocationName } from "../../utilities";
 import { getSelectedLocationName } from "../../utilities";
+import { SemipolarSpinner  } from 'epic-spinners';
 
 export default {
   name: 'Home',
 	components: {
 		Header: () => import('@/components/Header.vue'),
         StateData: () => import('@/components/StateData.vue'),
-		CheckboxSvgMap
+		CheckboxSvgMap,
+		SemipolarSpinner
 	},
   data() {
     return {
@@ -78,7 +83,7 @@ export default {
 			},
 			},
 		},
-
+		loading: true,
     };
 	
   },
@@ -87,6 +92,7 @@ export default {
 	},
 	methods: {
 		async getCountiesData(){
+			this.loading = true;
 			try {
 				const proxyurl = "https://hidden-fortress-01637.herokuapp.com/";
 				const url = "https://api.covidactnow.org/v2/counties.json?apiKey=";
@@ -98,7 +104,12 @@ export default {
 				//if we want to remove the " County" part from County name:
 				var formatData = (JSON.stringify(IdahoData)).replace(/ County/g, "");
 				this.counties = JSON.parse(formatData);
-				
+
+				if(this.counties) {
+					setTimeout(() => {
+						this.loading = false;
+					}, 3000)
+				}
 				//if not, comment out the two lines above, and uncomment line below:
 				//this.counties = JSON.parse(JSON.stringify(IdahoData));
 
@@ -197,7 +208,7 @@ export default {
 
 .svg-map {
   z-index: 1;
-  padding-top: 10px;
+  padding-top: 50px;
   position: absolute;
   transform: rotate(-11deg);
   stroke: #ffffff;
@@ -208,6 +219,14 @@ export default {
   stroke-width: 0.5px;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+.spinner {
+	left: 50%;
+	top: 40%;
+	position: absolute;
+	width: 100%;
+	align-content: center;
 }
 
 .description {

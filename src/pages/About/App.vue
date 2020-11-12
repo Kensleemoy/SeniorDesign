@@ -11,7 +11,7 @@
 		providing Idaho COVID-19 data in a clear and straightforward manner. 
 		</div>
 	</div>
-  <div class="aboutus">
+  <div class="about-us">
     <div id="kenslee">
       <div id="kenslee-photo" class="personal-photo"> <img src="@/assets/kenslee_dog_pic.jpg"> </div>
       <div class="likes">
@@ -59,6 +59,10 @@ export default {
 #desc{
 	text-align: left;
 	line-height: 1.6;
+}
+
+.about-us {
+  padding-left: 80px;
 }
 
 .personal-photo{
