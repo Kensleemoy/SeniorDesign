@@ -2,11 +2,11 @@
 	<div id="app">
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <Header />
-    <div v-if="!loading" class="data">
+    <div v-if="!loading&&fetch" class="data">
         <h1>Idaho Stats</h1>
 		<StateData />
 	</div>
-	<div v-if="!loading" class="map">
+	<div v-if="!loading&&fetch" class="map">
 		<checkbox-svg-map v-model="selectedLocations" :map="idaho_map" :location-class="getLocationClass"
         @mouseover="pointLocation"
         @mouseout="unpointLocation"
@@ -16,7 +16,7 @@
 		</div>
 	</div>
 		
-		<div v-if="!loading" class="idahostats">
+		<div v-if="!loading&&fetch" class="idahostats">
 			<h1>County Stats</h1>
 			<div class="description">
 				Select counties on the map to view their data in the table below.
@@ -46,8 +46,15 @@
 				</table>
 			</div>
 		</div>
-		<div class="spinner" v-if="loading">
+		<div class="spinner" v-if="loading&&fetch">
 			<semipolar-spinner :animation-duration="2000" :size="65" color="#ff9900"/>
+		</div>
+		<div class="down" v-if="!fetch">
+			Site is down :( <br />
+			Our tech team is hard at work!
+			<div class="down-image">
+				<img src="@/assets/website-down.jpg">
+			</div>
 		</div>
 	</div>
 </template>
@@ -84,6 +91,7 @@ export default {
 			},
 		},
 		loading: true,
+		fetch: true
     };
 	
   },
@@ -99,10 +107,10 @@ export default {
 				const key = process.env.VUE_APP_APIKEY;
 				const response = await fetch (proxyurl + url + key);
 				const data = await response.json();
+
 				var IdahoData = data.filter(function(d){return d.state == "ID"});
-				
-				//if we want to remove the " County" part from County name:
 				var formatData = (JSON.stringify(IdahoData)).replace(/ County/g, "");
+
 				this.counties = JSON.parse(formatData);
 
 				if(this.counties) {
@@ -110,11 +118,10 @@ export default {
 						this.loading = false;
 					}, 1000)
 				}
-				//if not, comment out the two lines above, and uncomment line below:
-				//this.counties = JSON.parse(JSON.stringify(IdahoData));
 
 			} catch (error) {
-				console.error(error);
+				this.fetch = false;
+				console.log("FETCH from API failed");
 			}
 		},
 		pointLocation(event) {
@@ -139,7 +146,6 @@ export default {
 			let x = getSelectedLocationName(idaho_map, location);
 			var valObj = this.counties.filter(function(elem){
 				if(elem.county == x){
-					//console.log(elem.county);
 					return elem;
 				}
 			});			
@@ -188,7 +194,6 @@ export default {
 }
 
 .data{
-  /* display: inline-block; */
   position: relative;
   z-index: 3;
   margin-left: 22%;
@@ -222,11 +227,24 @@ export default {
 }
 
 .spinner {
-	left: 50%;
-	top: 40%;
 	position: absolute;
+	text-align: center;
 	width: 100%;
+	top: 40%;
+	left: 47%;
 	align-content: center;
+}
+
+.down {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	top: 40%;
+	align-content: center;
+}
+
+.down-image {
+	padding: 20px;
 }
 
 .description {
@@ -264,7 +282,6 @@ export default {
 		width: 100%;
 	}
 	table, th, td {
-		/*border: 1px solid #6b6b6b;*/
 		border-collapse: collapse;
 		border: 1px solid #666666;
 		text-align:center;
@@ -286,10 +303,9 @@ export default {
 	}
 	.fade-enter-active
 	{
-		/*position: absolute;*/ /*this line makes the removal of rows smoother, need to fix row width*/
 		transition: all .75s;
 	}
-	.fade-enter /* .fade-leave-active below version 2.1.8 */ 
+	.fade-enter 
 	{
 		opacity: 0;
 		transform: translateY(-25px);
