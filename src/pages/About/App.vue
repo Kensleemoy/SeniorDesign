@@ -13,16 +13,25 @@
 	</div>
   <div class="aboutus">
     <div id="kenslee">
-      <div id="kenslee-photo" class="personal-photo"> <img src="@/assets/pngwing.com.png"> </div>
-      <div class="likes">Likes: Ice Cream and Puppies</div>
+      <div id="kenslee-photo" class="personal-photo"> <img src="@/assets/kenslee_dog_pic.jpg"> </div>
+      <div class="likes">
+        <h3 class="subhead">KENSLEE</h3>
+        Likes: Hanging with Toby and eating food
+        </div>
     </div>
     <div id="susan">
-      <div id="susan-photo" class="personal-photo"> <img src="@/assets/pngwing.com.png"> </div>       
-      <div class="likes">Likes: Flowers and Sunshine</div>
+      <div id="susan-photo" class="personal-photo"> <img src="@/assets/HeraLuna2.png"> </div>       
+      <div class="likes">
+        <h3 class="subhead">SUSAN</h3>
+        Likes: Going on adventures with Hera and Luna
+        </div>
     </div>
     <div id="aubrey">
-      <div id="aubrey-photo" class="personal-photo"> <img src="@/assets/pngwing.com.png"> </div>       
-      <div class="likes">Likes: Chocolate and Slides</div>
+      <div id="aubrey-photo" class="personal-photo"> <img src="@/assets/wednesday-griffin.png"> </div>       
+      <div class="likes">
+        <h3 class="subhead">AUBREY</h3>
+        Likes: Playing with Wednesday and Griffin
+        </div>
     </div>
   </div>
   </div>

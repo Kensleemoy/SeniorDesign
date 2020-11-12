@@ -11,7 +11,7 @@
         @mouseover="pointLocation"
         @mouseout="unpointLocation"
         @mousemove="moveOnLocation"/>
-		<div class="idaho__tooltip" :style="tooltipStyle">
+		<div v-if="pointedLocation !== null" class="idaho__tooltip" :style="tooltipStyle">
 			{{ pointedLocation }}
 		</div>
 		</div>
@@ -88,7 +88,7 @@ export default {
 	methods: {
 		async getCountiesData(){
 			try {
-				const proxyurl = "https://cors-anywhere.herokuapp.com/";
+				const proxyurl = "https://hidden-fortress-01637.herokuapp.com/";
 				const url = "https://api.covidactnow.org/v2/counties.json?apiKey=";
 				const key = process.env.VUE_APP_APIKEY;
 				const response = await fetch (proxyurl + url + key);
@@ -121,7 +121,6 @@ export default {
 			}
 		},
 		getLocationClass(location, index) {
-			// Generate heat map
 			return `svg-map__location svg-map__location--id${index % 4}`
 		},
 		getSelectedLocationName,
@@ -198,23 +197,17 @@ export default {
 
 .svg-map {
   z-index: 1;
-  /* display: inline-block; */
   padding-top: 10px;
   position: absolute;
   transform: rotate(-11deg);
-  stroke: rgb(255, 255, 255)56);
+  stroke: #ffffff;
   left: -10%;
   top: 100px;
   width: 172%;
   height: 225%;
-  stroke-width: 1;
+  stroke-width: 0.5px;
   stroke-linecap: round;
   stroke-linejoin: round;
-}
-
-th {
-	color: white;
-	background-color: black;
 }
 
 .description {
@@ -226,16 +219,19 @@ th {
     cursor: pointer; }
 
 .svg-map__location:focus, .svg-map__location:hover {
-      fill: #ff9900;
-      outline: 0; }
+    fill: #ff9900;
+	outline: 0;
+}
 
 .svg-map__location[aria-checked="true"] {
-      fill: #ff9900; }
+	fill: #ff9900; 
+}
 
 .idaho__tooltip {
     z-index: 2;
 	position: fixed;
-    width: 80px;
+    text-align: center;
+	width: 100px;
     padding: 10px;
     border: 1px solid #a9a9a9;
     background-color: #fff;
@@ -251,6 +247,7 @@ th {
 	table, th, td {
 		/*border: 1px solid #6b6b6b;*/
 		border-collapse: collapse;
+		border: 1px solid #666666;
 		text-align:center;
 		padding: 10 10;
 		
@@ -258,7 +255,7 @@ th {
 	td, th {
 		padding: 10 10;
 		font-size:auto;
-		background-color: rgb(189, 197, 182);
+		background-color: rgb(255, 245, 231);
 	}
 	th {
 		background-color: #1c4587ff;
