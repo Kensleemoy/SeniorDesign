@@ -108,7 +108,7 @@ export default {
 				if(this.counties) {
 					setTimeout(() => {
 						this.loading = false;
-					}, 3000)
+					}, 1000)
 				}
 				//if not, comment out the two lines above, and uncomment line below:
 				//this.counties = JSON.parse(JSON.stringify(IdahoData));
