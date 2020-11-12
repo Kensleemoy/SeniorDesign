@@ -284,12 +284,12 @@ export default {
 	td.tableMsg{
 		text-align:center;
 	}
-	.fade-enter-active, .fade-leave-active
+	.fade-enter-active
 	{
 		/*position: absolute;*/ /*this line makes the removal of rows smoother, need to fix row width*/
 		transition: all .75s;
 	}
-	.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ 
+	.fade-enter /* .fade-leave-active below version 2.1.8 */ 
 	{
 		opacity: 0;
 		transform: translateY(-25px);
