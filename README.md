@@ -1,6 +1,5 @@
 # SeniorDesign
 Authors: Aubrey Spannagel, Kenslee Moy, & Susan Higginbotham
-*testing*
 
 ## Hosted Website Link: https://cov-idaho.herokuapp.com/
 
