@@ -20,17 +20,17 @@ At the state level, statistics provided include population, number of cases, num
 
 The map is interactive; clicking on a county will pull up county stats in the table. Deselecting a county will remove it from the table. 
 
-<img src="assets/main-page-table.png"/>
+<img src="assets/main-page-table.png" title="Table and interactive map" />
 
 ## Sources
 The Sources page provides links to our API source, their data sources, and the svg map we utilized on the home page.
 
-<img src="assets/sources.png"/>
+<img src="assets/sources.png" title="Sources Page" />
 
 ## About Us
 The About Us page offers information about the creators of this web app and our motivations for creating it. 
 
-<img src="assets/about-us.png"/>
+<img src="assets/about-us.png" title="About Us Page" />
 
 ## Development Overview
 We worked as a team and followed Agile techniques, meeting at least once a week to coordinate and troubleshoot any issues that arose. This also kept us on track to meet given deadlines. We split up the work into 3 main parts: UI, API calls, and features. This allowed us to work fairly independently to provide a finished product in a reasonable amount of time.
