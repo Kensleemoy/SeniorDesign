@@ -5,7 +5,7 @@
 ## Main page
 
 ## Sources
-![Image of Sources Page](https://github.com/Kensleemoy/SeniorDesign/blob/master/docs/assets/sources_page.PNG)
+![Image of Sources Page](assets/sources_page.PNG)
 
 
 ## About Us
