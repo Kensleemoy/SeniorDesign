@@ -32,5 +32,5 @@ The About Us page offers information about the creators of this web app and our 
 
 <img src="assets/about-us.png"/>
 
-## What we worked on
-We worked as a team and employed the AGILE process, meeting at least once a week to coordinate and troubleshoot any issues that arose. We split up the work into 3 main parts: UI, API calls, and features. This allowed us to work fairly independently to provide a finished product in a reasonable amount of time.
+## Development Overview
+We worked as a team and followed Agile techniques, meeting at least once a week to coordinate and troubleshoot any issues that arose. This also kept us on track to meet given deadlines. We split up the work into 3 main parts: UI, API calls, and features. This allowed us to work fairly independently to provide a finished product in a reasonable amount of time.
