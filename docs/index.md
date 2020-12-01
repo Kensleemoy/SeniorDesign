@@ -1,4 +1,4 @@
-# Cov-Idaho Web application
+# Cov-Idaho Web Application
 
 ## Overview
 
