@@ -5,7 +5,7 @@
 ## Main page
 
 ## Sources
-<img style="width: 800px;" src="assets/sources_page.PNG" />
+<img src="assets/sources_page.PNG" />
 
 
 ## About Us
