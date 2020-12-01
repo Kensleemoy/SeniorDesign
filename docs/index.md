@@ -15,9 +15,9 @@ This web application provides Idaho COVID-19 data at the state and county level.
 ## Main page
 At the state level, statistics provided include population, number of cases, number of deaths, total number of  hospital beds, hospital beds used by COVID patients, total number of ICU beds, ICU beds used by COVID patients.  At the county level, the number of hospital or ICU beds used by COVID patients is not typically available, so these statistics are not included. 
 
-The map is interactive; clicking on a county will pull up county stats in the table. Deselecting a county will remove it from the table. 
+<img src="assets/main-page.png" alt="Main Page"/>
 
-<img src="assets/main-page.png"/>
+The map is interactive; clicking on a county will pull up county stats in the table. Deselecting a county will remove it from the table. 
 
 <img src="assets/main-page-table.png"/>
 
