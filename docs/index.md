@@ -14,7 +14,7 @@ To watch a video walkthrough of the website, go here: []().
 * GitHub git visualizion 
 
 ## Main page
-At the state level, statistics provided include population, number of cases, number of deaths, total number of  hospital beds, hospital beds used by COVID patients, total number of ICU beds, ICU beds used by COVID patients.  At the county level, the number of hospital or ICU beds used by COVID patients is not typically available, so these statistics are not included. 
+At the state level, statistics provided include population, number of cases, number of deaths, total number of  hospital beds, hospital beds used by COVID patients, total number of ICU beds, and ICU beds used by COVID patients.  At the county level, the number of hospital or ICU beds used by COVID patients is not typically available, so these statistics are not included. 
 
 <img src="assets/main-page.png" title="Main Page"/>
 
@@ -23,12 +23,12 @@ The map is interactive; clicking on a county will pull up county stats in the ta
 <img src="assets/main-page-table.png" title="Table and interactive map" />
 
 ## Sources
-The Sources page provides links to our API source, their data sources, and the svg map we utilized on the home page.
+The Sources page provides links to the API source, their data sources, and the svg map utilized on the home page.
 
 <img src="assets/sources.png" title="Sources Page" />
 
 ## About Us
-The About Us page offers information about the creators of this web app and our motivations for creating it. 
+The About Us page offers information about the creators of this web app and their motivations for creating it. 
 
 <img src="assets/about-us.png" title="About Us Page" />
 
