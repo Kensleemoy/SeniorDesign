@@ -3,7 +3,7 @@
 
 ## Overview
 This web application provides Idaho COVID-19 data at the state and county level. Our website can be viewed here: [COV-IDaho](https://cov-idaho.herokuapp.com/). <br />
-To watch a video walkthrough of the website, go here: [](). 
+To watch a video walkthrough of the website, click [here](https://boisestate.zoom.us/rec/share/3uHVCqGaY07ZpsDAQech8VgV8kQdTv9nLFtCsoutCCOb2dsSzjBl0igQq7qV7caY.RRZj31H7gAd7Z8iF ). 
 
 ## Technologies Used
 * VueJS
